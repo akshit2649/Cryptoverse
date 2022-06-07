@@ -2,6 +2,12 @@ import React from 'react';
 import { Layout, Typography, Space } from 'antd';
 import { Switch, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Exchanges from './components/Exchanges';
+import Homepage from './components/Homepage';
+import Cryptocurrencies from './components/Cryptocurrencies';
+import CryptoDetails from './components/CryptoDetails';
+import News from './components/News';
+
 import './App.css';
 
 const App = () => {
@@ -10,7 +16,28 @@ const App = () => {
       <div className="navbar">
         <Navbar />
       </div>
-      <div className="main"></div>
+      <div className="main">
+        <Layout></Layout>
+        <div className="routes">
+          <Switch>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route exact path="/exchanges">
+              <Exchanges />
+            </Route>
+            <Route exact path="/cryptocurrencies">
+              <Cryptocurrencies />
+            </Route>
+            <Route exact path="/crypto/:coindId">
+              <CryptoDetails />
+            </Route>
+            <Route exact path="/news">
+              <News />
+            </Route>
+          </Switch>
+        </div>
+      </div>
       <div className="footer"></div>
     </div>
   );
