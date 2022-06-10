@@ -64,7 +64,6 @@ const Homepage = () => {
           <Link to="/news">Show more</Link>
         </Title>
       </div>
-      <Cryptocurrencies simplified />
     </>
   );
 };
