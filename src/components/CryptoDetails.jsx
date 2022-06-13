@@ -3,6 +3,7 @@ import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd';
+import Loader from './Loader';
 
 import {
   MoneyCollectOutlined,
@@ -34,7 +35,7 @@ const CryptoDetails = () => {
     timePeriod,
   });
 
-  if (isFetching) return 'Loading...';
+  if (isFetching) return <Loader />;
 
   console.log(coinHistory);
   const cryptoDetails = data?.data?.coin;
